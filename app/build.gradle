@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 35
 
     defaultConfig {
         applicationId "org.secuso.privacyfriendlycircuittraining"
@@ -17,6 +17,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    namespace 'org.secuso.privacyfriendlycircuittraining'
+    compileOptions {
+        sourceCompatibility "21"
+        targetCompatibility "21"
     }
 }
 
