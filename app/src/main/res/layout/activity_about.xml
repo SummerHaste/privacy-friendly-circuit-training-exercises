@@ -41,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
-            android:text="@string/app_name_long" />
+            android:text="@string/app_name_long"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -54,14 +55,14 @@
                 android:id="@+id/textFieldVersion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/version_number" />
+                android:layout_marginTop="10dp"
+                android:text="@string/version_number"/>
 
             <TextView
                 android:id="@+id/textFieldVersionName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="4dp"
                 android:layout_toEndOf="@+id/textFieldVersion" />
 
@@ -72,8 +73,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:text="@string/about_author" />
+            android:layout_marginTop="15dp"
+            android:text="@string/about_author"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,26 +90,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_author_names" />
-
-            <TextView
-                android:id="@+id/textFieldContributors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_toEndOf="@+id/textFieldAuthorNames"
-                android:text="@string/about_author_contributors" />
-
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textFieldBasedNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/about_author_based_note" />
+
+        <TextView
+            android:id="@+id/textFieldBasedAuthors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/about_author_based_names" />
+
+        <TextView
+            android:id="@+id/textFieldContributors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/about_author_contributors" />
 
         <TextView
             android:id="@+id/textFieldAffiliation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:text="@string/about_affiliation"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:text="@string/about_affiliation" />
 
         <ImageView
             android:id="@+id/imageView1"
