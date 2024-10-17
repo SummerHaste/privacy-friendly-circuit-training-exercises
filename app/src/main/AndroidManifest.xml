@@ -49,7 +49,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
-        <activity
+       <!-- <activity
             android:name="org.secuso.UnoVivo.activities.HelpActivity"
             android:label="@string/help"
             android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
@@ -57,7 +57,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.secuso.UnoVivo.activities.MainActivity" />
-        </activity>
+        </activity>-->
         <activity
             android:name="org.secuso.UnoVivo.activities.SettingsActivity"
             android:label="@string/title_activity_settings"

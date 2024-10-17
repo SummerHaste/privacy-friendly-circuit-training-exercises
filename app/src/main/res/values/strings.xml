@@ -27,7 +27,7 @@
     <string name="main_text_rest_interval">Rest Interval</string>
     <string name="main_text_sets">Sets</string>
     <string name="main_text_start">START  ></string>
-    <string name="main_text_title">Please choose:</string>
+    <string name="main_text_title">Please choose</string>
     <string name="main_block_periodization_headline">Configuration:</string>
     <string name="main_block_periodization">Block Periodization</string>
     <string name="main_block_periodization_info">Block Periodization</string>
@@ -42,7 +42,7 @@
     <string name="main_text_disabledbutton_desc">A disabled button looks like this (any size):</string>
     <string name="main_text_normalbutton_desc">There are multiple ways to display basic buttons. Button 1 is the basic button. If you wish to separate a button visually, use button 2. The buttons 3&#8211;5 are examples for highlighted buttons. Depending on the app other colors are possible.</string>
     <string name="main_button_welcomedialog_text">Use the button in the lower left corner to call the Welcome Dialog.</string>
-    <string name="use_exercise_sets">Use Exercise Sets</string>
+    <string name="choose_exercise_set" translatable="false">an exercise set:</string>
 
     <!-- ###WORKOUT###-->
     <string name="workout_headline_start_timer">START IN</string>

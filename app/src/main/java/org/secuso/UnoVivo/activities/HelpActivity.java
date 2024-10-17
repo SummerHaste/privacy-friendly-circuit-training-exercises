@@ -52,7 +52,7 @@ public class HelpActivity extends BaseActivity {
     }
 
     protected int getNavigationDrawerID() {
-        return R.id.nav_help;
+        return 0; //R.id.nav_help;
     }
 
 }

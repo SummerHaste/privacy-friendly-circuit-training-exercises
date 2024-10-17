@@ -255,7 +255,7 @@ public class MainActivity extends BaseActivity {
         } else if (id == R.id.main_block_periodization_text) {
             this.blockPeriodizationSwitchButton.setChecked(!this.blockPeriodizationSwitchButton.isChecked());
             PrefManager.setBlockPeriodizationSwitchButton(getBaseContext(), this.blockPeriodizationSwitchButton.isChecked());
-        } else if (id == R.id.main_use_exercise_sets_text) {
+        } else if (id == R.id.main_choose_exercise_set_text) {
             this.workoutMode.setChecked(!this.workoutMode.isChecked());
             PrefManager.setWorkoutMode(getBaseContext(), this.workoutMode.isChecked());
         } else if (id == R.id.start_workout) {

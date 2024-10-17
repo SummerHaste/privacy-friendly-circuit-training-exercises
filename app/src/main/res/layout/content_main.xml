@@ -24,6 +24,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="200dp"
             android:layout_weight="0.1">
 
             <TextView
@@ -50,8 +51,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/main_text_work_interval"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/transparent"
+                android:textSize="0sp" />
         </TableRow>
 
         <TableRow
@@ -75,38 +76,38 @@
                 <Button
                     android:id="@+id/main_workout_interval_minus"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="-"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/main_workout_interval_time"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_weight="0.4"
                     android:gravity="center"
                     android:text="00 : 00"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/main_workout_interval_plus"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="+"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <Space
@@ -130,8 +131,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/main_text_rest_interval"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/transparent"
+                android:textSize="0sp" />
         </TableRow>
 
         <TableRow
@@ -155,38 +156,38 @@
                 <Button
                     android:id="@+id/main_rest_interval_minus"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="-"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/main_rest_interval_time"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_weight="0.4"
                     android:gravity="center"
                     android:text="00 : 00"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/main_rest_interval_plus"
                     android:layout_width="0dp"
-                    android:layout_height="35dp"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="+"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp"
                     android:textStyle="bold" />
 
                 <Space
@@ -220,23 +221,60 @@
                 android:gravity="fill_vertical"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/main_exercise_set_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:gravity="center_horizontal"
+                    android:text="@string/choose_exercise_set"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"/>
+
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:elevation="0dp">
+
+            <!--            <TextView
+                            android:id="@+id/main_text_sets"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/main_text_sets"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="fill_vertical"
+                android:orientation="horizontal">
+
                 <Switch
                     android:id="@+id/workout_mode_switch"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
+                    android:layout_weight="0.2"
+                    android:trackTint="@color/transparent"
+                    android:thumbTint="@color/transparent"/>
 
 
                 <TextView
-                    android:id="@+id/main_use_exercise_sets_text"
+                    android:id="@+id/main_choose_exercise_set_text"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.6"
                     android:onClick="onClick"
-                    android:text="@string/use_exercise_sets"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:gravity="center_horizontal"
+                    android:text="@string/choose_exercise_set"
+                    android:textColor="@color/transparent"
+                    android:textSize="0sp" />
 
             </LinearLayout>
         </TableRow>
@@ -258,14 +296,16 @@
 
                 <Spinner
                     android:id="@+id/exerciseSets"
+                    android:dropDownWidth="wrap_content"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="100dp"
                     android:layout_marginLeft="80dp"
                     android:layout_marginRight="80dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="36sp" />
+                    android:textSize="20sp"
+                    android:layout_marginBottom="50dp"/>
 
             </LinearLayout>
         </TableRow>
@@ -294,10 +334,10 @@
                     android:layout_height="35dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="-"
-                    android:textColor="@color/white"
+                    android:textColor="@color/transparent"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -308,7 +348,7 @@
                     android:layout_weight="0.4"
                     android:gravity="center"
                     android:text="0"
-                    android:textColor="@color/black"
+                    android:textColor="@color/transparent"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -318,10 +358,10 @@
                     android:layout_height="35dp"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="0.09"
-                    android:background="@drawable/button_normal"
+                    android:background="@color/transparent"
                     android:onClick="onClick"
                     android:text="+"
-                    android:textColor="@color/white"
+                    android:textColor="@color/transparent"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -360,7 +400,9 @@
                         android:id="@+id/main_block_periodization_switch"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.2" />
+                        android:layout_weight="0.2"
+                        android:trackTint="@color/transparent"
+                        android:thumbTint="@color/transparent"/>
 
                     <TextView
                         android:id="@+id/main_block_periodization_text"
@@ -370,7 +412,7 @@
                         android:onClick="onClick"
                         android:text="@string/main_block_periodization"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/transparent"
                         android:textSize="20sp" />
 
                     <ImageButton
@@ -382,7 +424,7 @@
                         android:clickable="true"
                         android:onClick="onClick"
                         android:src="@drawable/ic_config_24dp"
-                        app:tint="@color/middlegrey" />
+                        app:tint="@color/transparent" />
                 </LinearLayout>
 
                 <Space
