@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.secuso.privacyfriendlycircuittraining">
+    package="org.secuso.UnoVivo">
 
     <supports-screens
         android:anyDensity="true"
@@ -17,14 +17,14 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
-        android:name=".PFCircuitTrainingApplication"
+        android:name="org.secuso.UnoVivo.PFCircuitTrainingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.SplashActivity"
+            android:name="org.secuso.UnoVivo.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -34,86 +34,86 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.tutorial.TutorialActivity"
+            android:name="org.secuso.UnoVivo.tutorial.TutorialActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:name="org.secuso.UnoVivo.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.AboutActivity"
+            android:name="org.secuso.UnoVivo.activities.AboutActivity"
             android:label="@string/about"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.HelpActivity"
+            android:name="org.secuso.UnoVivo.activities.HelpActivity"
             android:label="@string/help"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.SettingsActivity"
+            android:name="org.secuso.UnoVivo.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity">
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.WorkoutActivity"
+            android:name="org.secuso.UnoVivo.activities.WorkoutActivity"
             android:label="@string/title_activity_workout"
             android:launchMode="singleTask"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.MotivationAlertTextsActivity"
+            android:name="org.secuso.UnoVivo.activities.MotivationAlertTextsActivity"
             android:label="@string/title_activity_motivation_alert_texts"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.SettingsActivity">
+            android:parentActivityName="org.secuso.UnoVivo.activities.SettingsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.SettingsActivity" />
+                android:value="org.secuso.UnoVivo.activities.SettingsActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.StatisticsActivity"
+            android:name="org.secuso.UnoVivo.activities.StatisticsActivity"
             android:label="@string/title_activity_statistics"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.ExerciseSetActivity"
+            android:name="org.secuso.UnoVivo.activities.ExerciseSetActivity"
             android:label="@string/title_activity_exercisesets"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
         <activity
-            android:name="org.secuso.privacyfriendlycircuittraining.activities.ExerciseActivity"
+            android:name="org.secuso.UnoVivo.activities.ExerciseActivity"
             android:label="@string/title_activity_exercises"
-            android:parentActivityName="org.secuso.privacyfriendlycircuittraining.activities.MainActivity"
+            android:parentActivityName="org.secuso.UnoVivo.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.secuso.privacyfriendlycircuittraining.activities.MainActivity" />
+                android:value="org.secuso.UnoVivo.activities.MainActivity" />
         </activity>
 
         <service
-            android:name=".backup.PFABackupService"
+            android:name="org.secuso.UnoVivo.backup.PFABackupService"
             android:enabled="true"
             android:exported="true"
             android:process=":backup"
@@ -124,19 +124,19 @@
         </service>
 
         <service
-            android:name="org.secuso.privacyfriendlycircuittraining.services.TimerService"
+            android:name="org.secuso.UnoVivo.services.TimerService"
             android:enabled="true"
             android:exported="true" />
 
         <receiver
-            android:name="org.secuso.privacyfriendlycircuittraining.receivers.OnBootCompletedBroadcastReceiver"
+            android:name="org.secuso.UnoVivo.receivers.OnBootCompletedBroadcastReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.secuso.privacyfriendlycircuittraining.receivers.MotivationAlertReceiver" />
+        <receiver android:name="org.secuso.UnoVivo.receivers.MotivationAlertReceiver" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

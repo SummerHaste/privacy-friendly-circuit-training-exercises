@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                tools:context="org.secuso.privacyfriendlycircuittraining.Fragments.ExerciseSetDialogFragment">
+                tools:context="org.secuso.UnoVivo.Fragments.ExerciseSetDialogFragment">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_dialog"
