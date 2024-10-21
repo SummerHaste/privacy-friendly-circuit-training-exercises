@@ -33,11 +33,11 @@ public class PrefManager {
     public static final int PREFERENCE_MODE = Context.MODE_PRIVATE;
 
     // Default values for the timers
-    private static final int workoutTimeDefault = 60;
-    private static final int restTimeDefault = 30;
-    public static final int setsDefault = 6;
-    private static final int blockPeriodizationTimeDefault = 90;
-    private static final int blockPeriodizationSetsDefault = 1;
+    private static final int workoutTimeDefault = 86400;
+    private static final int restTimeDefault = 0;
+    public static final int setsDefault = 1;
+    private static final int blockPeriodizationTimeDefault = 0;
+    private static final int blockPeriodizationSetsDefault = 0;
 
     public PrefManager(Context context) {
     }
@@ -173,7 +173,7 @@ public class PrefManager {
     }
 
     public static boolean getStartTimerSwitchEnabled(Context context) {
-        return getPreferences(context).getBoolean(context.getString(R.string.pref_start_timer_switch_enabled), true);
+        return getPreferences(context).getBoolean(context.getString(R.string.pref_start_timer_switch_enabled), false);
     }
 
     public static boolean getBlinkingProgressBar(Context context) {
@@ -181,7 +181,7 @@ public class PrefManager {
     }
 
     public static boolean getCaloriesCounter(Context context) {
-        return getPreferences(context).getBoolean(context.getString(R.string.pref_calories_counter), true);
+        return getPreferences(context).getBoolean(context.getString(R.string.pref_calories_counter), false);
     }
 
     public static boolean getSoundsMuted(Context context) {

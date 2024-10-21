@@ -14,39 +14,64 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom|right|end"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
 
-        <TextView
+        <!--        <TextView
             android:id="@+id/main_text_rest_interval"
             android:layout_width="83dp"
             android:layout_height="match_parent"
             android:layout_weight="0.01"
             android:textAlignment="viewEnd"
-            android:gravity="end|center_vertical"
+            android:gravity="start|center_vertical"
             android:text="@string/main_text_start"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
             android:textStyle="bold|italic"
-           />
+           />-->
 
-
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/start_workout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:background="@drawable/button_fullwidth"
-        android:onClick="onClick"
-        android:src="@drawable/ic_play_24dp"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_anchorGravity="bottom|right|end" />
 
     </LinearLayout>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/start_work"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:src="@drawable/ic_play_24dp"-->
+<!--        android:layout_gravity="center"/>         android:src="@drawable/ic_play_24dp"-->
+
+    <ImageView
+        android:id="@+id/start_workout"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_margin="75dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/button_fullwidth"
+        android:elevation="-8dp"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:text="Go!"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@+id/linearLayout"
+        app:layout_anchorGravity="center" />
+
+    <TextView
+        android:id="@+id/start_workout_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:elevation="0dp"
+        android:scaleType="fitCenter"
+        android:text="@string/start_workout_text"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_anchor="@+id/start_workout"
+        app:layout_anchorGravity="center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

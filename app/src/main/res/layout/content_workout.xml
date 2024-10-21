@@ -35,8 +35,8 @@
 
         <ImageView
             android:id="@+id/workout_previous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_weight="0.3"
             android:onClick="onClick"
@@ -51,8 +51,8 @@
             android:id="@+id/workout_center_view_constraint_layout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/workout_next"
             app:layout_constraintStart_toEndOf="@id/workout_previous"
@@ -63,13 +63,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toTopOf="@id/workout_image"
-                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintDimensionRatio="100:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_min="75dp"
+                app:layout_constraintHeight_min="0dp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_min="75dp">
+                app:layout_constraintWidth_min="0dp">
 
                 <ProgressBar
                     android:id="@+id/progressBar"
@@ -77,6 +77,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/transparent"
                     android:progressDrawable="@drawable/circular"
                     android:rotation="270" />
 
@@ -84,12 +86,11 @@
                     android:id="@+id/workout_timer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
                     android:gravity="center"
-                    android:padding="25dp"
+                    android:padding="0dp"
                     android:text="00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/transparent"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform" />
 
@@ -97,16 +98,17 @@
 
             <ImageView
                 android:id="@+id/workout_image"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="218dp"
+                android:layout_height="196dp"
                 android:layout_marginBottom="8dp"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.508"
                 tools:visibility="visible" />
 
             <TextView
@@ -114,31 +116,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="116dp"
                 android:text="Exercise"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@id/workout_description"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/workout_image"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/workout_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="111dp"
+                android:layout_marginTop="32dp"
                 android:text="Desctiotion"
-                android:textSize="15sp"
+                android:textAlignment="center"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/workout_name"
+                app:layout_constraintTop_toBottomOf="@id/workout_image"
                 tools:visibility="visible" />
 
 
@@ -147,8 +151,8 @@
 
         <ImageView
             android:id="@+id/workout_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="0.3"
             android:onClick="onClick"

@@ -129,10 +129,10 @@ public class WorkoutActivity extends AppCompatActivity {
         fab.setOnClickListener(view -> {
             fab.setSelected(!fab.isSelected());
             if (fab.isSelected() && timerService != null) {
-                fab.setImageResource(R.drawable.ic_play_24dp);
+                //fab.setImageResource(R.drawable.ic_play_24dp);
                 timerService.pauseTimer();
             } else if (timerService != null) {
-                fab.setImageResource(R.drawable.ic_pause_24dp);
+                //fab.setImageResource(R.drawable.ic_pause_24dp);
                 timerService.resumeTimer();
             }
         });
@@ -208,6 +208,7 @@ public class WorkoutActivity extends AppCompatActivity {
          **/
         @Override
         public void onReceive(Context context, Intent intent) {
+
             if (intent.getExtras() != null) {
                 if (intent.getLongExtra("onTickMillis", 0) != 0) {
 
@@ -224,6 +225,12 @@ public class WorkoutActivity extends AppCompatActivity {
                     workoutColors = message.equals(getResources().getString(R.string.workout_headline_workout));
                     setWorkoutGuiColors(workoutColors);
                     workoutTitle.setText(message);
+                }
+                if (intent.getStringExtra("activity_name") != null) {
+                    String activityName = intent.getStringExtra("activity_name");
+
+                    TextView headerBarText = (TextView) findViewById(R.id.header_bar_text);
+                    headerBarText.setText(activityName);
                 }
                 if (intent.getIntExtra("countdown_seconds", -1) != -1) {
                     int seconds = intent.getIntExtra("countdown_seconds", 0);
@@ -288,10 +295,10 @@ public class WorkoutActivity extends AppCompatActivity {
      * @param guiFlip True for workout phase colors, false for rest phase colors
      */
     private void setWorkoutGuiColors(boolean guiFlip) {
-        int textColor = guiFlip ? R.color.white : R.color.black;
-        int backgroundColor = guiFlip ? R.color.lightblue : R.color.white;
-        int progressBackgroundColor = guiFlip ? R.color.white : R.color.lightblue;
-        int buttonColor = guiFlip ? R.color.white : R.color.darkblue;
+        int textColor = guiFlip ? R.color.transparent : R.color.transparent;
+        int backgroundColor = guiFlip ? R.color.white : R.color.white;
+        int progressBackgroundColor = guiFlip ? R.color.transparent : R.color.transparent;
+        int buttonColor = guiFlip ? R.color.darkblue : R.color.darkblue;
 
 
         currentSetsInfo.setTextColor(getResources().getColor(textColor));
@@ -341,8 +348,11 @@ public class WorkoutActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.workout_next:
-                if (timerService != null) {
+                //if (timerService != null) {
+                if (timerService.getCurrentSet() != timerService.getSets()) {
                     timerService.nextTimer();
+                } else {
+                    showFinishedView();
                 }
                 break;
             case R.id.workout_finished_ok:
@@ -350,8 +360,10 @@ public class WorkoutActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.finish_workout:
-                if (isCancelDialogEnabled(this)) {
-                    showCancelAlert(true);
+                if (timerService.getCurrentSet() != timerService.getSets()) {
+                    if (isCancelDialogEnabled(this)) {
+                        showCancelAlert(true);
+                    }
                 } else {
                     showFinishedView();
                 }
@@ -379,6 +391,10 @@ public class WorkoutActivity extends AppCompatActivity {
                 workoutImage.setVisibility(View.VISIBLE);
                 workoutName.setVisibility(View.VISIBLE);
                 workoutDescription.setVisibility(View.VISIBLE);
+
+                String activityName = timerService.getActivityName();
+                TextView headerBarText = (TextView) findViewById(R.id.header_bar_text);
+                headerBarText.setText(activityName);
             } else {
                 ConstraintLayout constraintLayout = findViewById(R.id.workout_center_view_constraint_layout);
                 ConstraintSet constraintSet = new ConstraintSet();
@@ -418,10 +434,10 @@ public class WorkoutActivity extends AppCompatActivity {
             }
 
             if (isPaused) {
-                fab.setImageResource(R.drawable.ic_play_24dp);
+                //fab.setImageResource(R.drawable.ic_play_24dp);
                 fab.setSelected(true);
             } else {
-                fab.setImageResource(R.drawable.ic_pause_24dp);
+                //fab.setImageResource(R.drawable.ic_pause_24dp);
                 fab.setSelected(false);
             }
 
@@ -507,6 +523,7 @@ public class WorkoutActivity extends AppCompatActivity {
         this.workoutTitle.setText(getResources().getString(R.string.workout_headline_done));
         this.workoutTimer.setText("0");
         this.fab.hide();
+        finishButton.setTextColor(getResources().getColor(R.color.transparent));
         this.finishedView.setVisibility(View.VISIBLE);
 
         finishedView.setOnTouchListener((v, event) -> true);
@@ -582,11 +599,13 @@ public class WorkoutActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-        if (isCancelDialogEnabled(this)) {
-            showCancelAlert(false);
+        if (timerService.getCurrentSet() != timerService.getSets()) {
+            if (isCancelDialogEnabled(this)) {
+                showCancelAlert(false);
+            }
         } else {
             cleanTimerServiceFinish();
-            finish();
+            showFinishedView();
         }
         //super.onBackPressed();
     }

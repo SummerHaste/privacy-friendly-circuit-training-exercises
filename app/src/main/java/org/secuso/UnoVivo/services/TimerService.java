@@ -107,6 +107,8 @@ public class TimerService extends Service {
 
     private boolean isExerciseMode = false;
 
+    private String activityName = "default";
+
 
     @Override
     public void onCreate() {
@@ -237,7 +239,8 @@ public class TimerService extends Service {
                             broadcast.putExtra("timer_title", currentTitle)
                                     .putExtra("countdown_seconds", (int) blockPeriodizationTime/1000)
                                     .putExtra("new_timer", blockPeriodizationTime)
-                                    .putExtra("exercise_id", currentExerciseId);
+                                    .putExtra("exercise_id", currentExerciseId)
+                                    .putExtra("activity_name", activityName);
                         }
 
                         restTimer = createRestTimer(blockPeriodizationTime);
@@ -250,7 +253,8 @@ public class TimerService extends Service {
                             broadcast.putExtra("timer_title", currentTitle)
                                     .putExtra("countdown_seconds", (int) restTime/1000)
                                     .putExtra("new_timer", restTime)
-                                    .putExtra("exercise_id", currentExerciseId);
+                                    .putExtra("exercise_id", currentExerciseId)
+                                    .putExtra("activity_name", activityName);
                         }
 
 
@@ -345,7 +349,8 @@ public class TimerService extends Service {
                             .putExtra("sets", sets)
                             .putExtra("countdown_seconds", (int) workoutTime/1000)
                             .putExtra("new_timer", workoutTime)
-                            .putExtra("exercise_id", currentExerciseId);
+                            .putExtra("exercise_id", currentExerciseId)
+                            .putExtra("activity_name", activityName);
                 }
 
                 sendBroadcast(broadcast);
@@ -371,7 +376,7 @@ public class TimerService extends Service {
      * @param blockPeriodizationSets Interval determining after how many sets a block rest occurs
      */
     public void startWorkout(long workoutTime, long restTime, long startTime, int sets,
-                             boolean isBlockPeriodization, long blockPeriodizationTime, int blockPeriodizationSets, ArrayList<Integer> exerciseIds, boolean isExerciseMode) {
+                             boolean isBlockPeriodization, long blockPeriodizationTime, int blockPeriodizationSets, ArrayList<Integer> exerciseIds, boolean isExerciseMode, String activityName) {
         this.blockPeriodizationTime = blockPeriodizationTime*1000;
         this.blockPeriodizationSets = blockPeriodizationSets;
         this.isBlockPeriodization = isBlockPeriodization;
@@ -383,6 +388,7 @@ public class TimerService extends Service {
         this.timeSpentWorkingOut = 0;
         this.caloriesBurned = 0;
         this.caloriesPerExercise = calculateUserCalories((float) workoutTime);
+        this.activityName = activityName;
 
         this.workoutTimer = createWorkoutTimer(this.workoutTime);
         this.restTimer = createRestTimer(this.startTime);
@@ -472,7 +478,9 @@ public class TimerService extends Service {
                 broadcast = new Intent(COUNTDOWN_BROADCAST)
                         .putExtra("timer_title", currentTitle)
                         .putExtra("new_timer", time)
-                        .putExtra("exercise_id", currentExerciseId);
+                        .putExtra("exercise_id", currentExerciseId)
+                        .putExtra("activity_name", activityName)
+                        .putExtra("activity_name", activityName);
             }
 
             if(isPaused){
@@ -511,7 +519,8 @@ public class TimerService extends Service {
                         .putExtra("current_set", currentSet)
                         .putExtra("new_timer", workoutTime)
                         .putExtra("sets", sets)
-                        .putExtra("exercise_id", currentExerciseId);
+                        .putExtra("exercise_id", currentExerciseId)
+                        .putExtra("activity_name", activityName);
             }
 
             if(isPaused){
@@ -554,7 +563,8 @@ public class TimerService extends Service {
                         .putExtra("sets", sets)
                         .putExtra("new_timer", time)
                         .putExtra("current_set", currentSet)
-                        .putExtra("exercise_id", currentExerciseId);
+                        .putExtra("exercise_id", currentExerciseId)
+                        .putExtra("activity_name", activityName);
             }
 
             if(isPaused){
@@ -604,7 +614,8 @@ public class TimerService extends Service {
                         .putExtra("current_set", currentSet)
                         .putExtra("new_timer", workoutTime)
                         .putExtra("sets", sets)
-                        .putExtra("exercise_id", currentExerciseId);
+                        .putExtra("exercise_id", currentExerciseId)
+                        .putExtra("activity_name", activityName);
             }
 
             if(isPaused){
@@ -930,4 +941,6 @@ public class TimerService extends Service {
     public boolean getisExerciseMode(){
         return this.isExerciseMode;
     }
+
+    public String getActivityName() { return this.activityName; }
 }

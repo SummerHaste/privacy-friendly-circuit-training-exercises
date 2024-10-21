@@ -24,8 +24,8 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="200dp"
-            android:layout_weight="0.1">
+            android:layout_marginTop="50dp"
+            android:layout_weight="0">
 
             <TextView
                 android:id="@+id/main_text_title"
@@ -35,14 +35,14 @@
                 android:gravity="center"
                 android:text="@string/main_text_title"
                 android:textColor="@color/black"
-                android:textSize="28sp" />
+                android:textSize="25sp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.05">
+            android:layout_weight="0">
 
             <TextView
                 android:id="@+id/main_text_work_interval"
@@ -58,7 +58,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2">
+            android:layout_weight="0">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,7 +122,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.05">
+            android:layout_weight="0">
 
             <TextView
                 android:id="@+id/main_text_rest_interval"
@@ -138,7 +138,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2">
+            android:layout_weight="0">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -201,7 +201,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.05"
+            android:layout_weight="0"
             android:elevation="0dp">
 
             <!--            <TextView
@@ -229,25 +229,9 @@
                     android:gravity="center_horizontal"
                     android:text="@string/choose_exercise_set"
                     android:textColor="@color/black"
-                    android:textSize="28sp"/>
+                    android:textSize="20sp"/>
 
             </LinearLayout>
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.05"
-            android:elevation="0dp">
-
-            <!--            <TextView
-                            android:id="@+id/main_text_sets"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/main_text_sets"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -278,6 +262,24 @@
 
             </LinearLayout>
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:elevation="0dp">
+
+            <!--            <TextView
+                            android:id="@+id/main_text_sets"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/main_text_sets"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />-->
+
+
+        </TableRow>
 
         <TableRow
             android:id="@+id/exerciesetsRow"
@@ -304,8 +306,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:layout_marginBottom="50dp"/>
+                    android:textSize="30sp"
+                    android:layout_marginBottom="0dp"/>
 
             </LinearLayout>
         </TableRow>
@@ -314,7 +316,7 @@
             android:id="@+id/setsRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2">
+            android:layout_weight="0">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -376,8 +378,9 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.1"
-            android:gravity="center">
+            android:layout_weight="0"
+            android:gravity="center"
+            android:layout_marginBottom="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

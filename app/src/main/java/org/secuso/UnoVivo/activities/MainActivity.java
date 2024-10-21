@@ -78,7 +78,7 @@ public class MainActivity extends BaseActivity {
     private int sets = 0;
     private int setsPerRound = 0;
     private boolean blockPeriodizationSwitchState = false;
-    private boolean workoutModeSwitchState = false;
+    private boolean workoutModeSwitchState = true;
 
     // GUI text
     private TextView workoutIntervalText = null;
@@ -95,7 +95,9 @@ public class MainActivity extends BaseActivity {
     ArrayList<Integer> exerciseIds = null;
     ArrayList<Integer> ExerciseIdsForRounds = null;
 
-    private boolean isExerciseMode = false;
+    String activityName = null;
+
+    private boolean isExerciseMode = true;
     private static Toast toast;
 
     @Override
@@ -195,13 +197,14 @@ public class MainActivity extends BaseActivity {
             exerciseSetsNames.add(ex.getName());
         }
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, exerciseSetsNames);
+                R.layout.spinner_item, exerciseSetsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         exerciseSetSpinner.setAdapter(dataAdapter);
         exerciseSetSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 setsPerRound = exerciseSetslist.get(pos).getNumber();
                 exerciseIds = exerciseSetslist.get(pos).getExercises();
+                activityName = exerciseSetslist.get(pos).getName();
             }
 
             @Override
@@ -280,10 +283,10 @@ public class MainActivity extends BaseActivity {
 
             if (isStartTimerEnabled(this)) {
                 timerService.startWorkout(workoutTime, restTime, startTime, setsPerRound,
-                        isBlockPeriodization, blockPeriodizationTime, blockPeriodizationSets, ExerciseIdsForRounds, isExerciseMode);
+                        isBlockPeriodization, blockPeriodizationTime, blockPeriodizationSets, ExerciseIdsForRounds, isExerciseMode, activityName);
             } else {
                 timerService.startWorkout(workoutTime, restTime, 0, setsPerRound,
-                        isBlockPeriodization, blockPeriodizationTime, blockPeriodizationSets, ExerciseIdsForRounds, isExerciseMode);
+                        isBlockPeriodization, blockPeriodizationTime, blockPeriodizationSets, ExerciseIdsForRounds, isExerciseMode, activityName);
             }
 
             this.startActivity(intent);
@@ -399,7 +402,7 @@ public class MainActivity extends BaseActivity {
         this.blockPeriodizationTime = PrefManager.getTimerPeriodizationTime(getBaseContext());
         this.blockPeriodizationSets = PrefManager.getTimerPeriodizationSet(getBaseContext());
         this.blockPeriodizationSwitchState = PrefManager.getBlockPeriodizationSwitchButton(getBaseContext());
-        this.workoutModeSwitchState = PrefManager.getWorkoutMode(getBaseContext());
+        //this.workoutModeSwitchState = PrefManager.getWorkoutMode(getBaseContext());
     }
 
 
