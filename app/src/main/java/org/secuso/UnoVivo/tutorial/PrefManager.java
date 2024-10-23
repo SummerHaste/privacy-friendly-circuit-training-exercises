@@ -181,7 +181,7 @@ public class PrefManager {
     }
 
     public static boolean getCaloriesCounter(Context context) {
-        return getPreferences(context).getBoolean(context.getString(R.string.pref_calories_counter), false);
+        return getPreferences(context).getBoolean(context.getString(R.string.pref_calories_counter), true);
     }
 
     public static boolean getSoundsMuted(Context context) {

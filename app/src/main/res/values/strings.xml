@@ -172,7 +172,7 @@
     </string-array>
     <string name="alert_confirm_dialog_positive">Yes</string>
     <string name="alert_confirm_dialog_negative">No</string>
-    <string name="workout_canceled_info">Do you want to abort the workout?</string>
+    <string name="workout_canceled_info">Do you want to abort the current activity?</string>
     <string name="workout_canceled_check">Don\'t show this message again</string>
     <string name="alert_personalization_title">Do you want to personalize your app now?</string>
     <string name="alert_personalization_message">This will improve the calories calculation.</string>
@@ -182,13 +182,13 @@
     <string name="month">Month</string>
     <string name="week">Week</string>
     <string name="day">Day</string>
-    <string name="report_workout_time">Workout time in minutes</string>
-    <string name="report_calories">Calories</string>
+    <string name="report_workout_time">Activities</string>
+    <string name="report_calories">Tasks</string>
     <string name="activity_summary_subtitle">Summary of activities</string>
     <string name="activity_chart_summary_subtitle">Detailed summary of your activities</string>
-    <string name="summary_card_calories">kcal</string>
-    <string name="action_calories">Calories</string>
-    <string name="action_time">Workout time</string>
+    <string name="summary_card_calories">Tasks</string>
+    <string name="action_calories">Tasks</string>
+    <string name="action_time">Activities</string>
 
 
     <!-- ### TUTORIAL DIALOG ### -->

@@ -25,11 +25,11 @@ import java.util.Map;
 
 public class ActivityChart {
     private String title;
-    private Map<String, Double> time;
-    private Map<String, Double> calories;
+    private Map<String, Integer> time;
+    private Map<String, Integer> calories;
     private ActivityDayChart.DataType displayedDataType;
 
-    public ActivityChart(Map<String, Double> time, Map<String, Double> calories, String title) {
+    public ActivityChart(Map<String, Integer> time, Map<String, Integer> calories, String title) {
         this.time = time;
         this.title = title;
         this.calories = calories;
@@ -43,19 +43,19 @@ public class ActivityChart {
         this.title = title;
     }
 
-    public Map<String, Double> getTime() {
+    public Map<String, Integer> getTime() {
         return time;
     }
 
-    public void setTime(Map<String, Double> time) {
+    public void setTime(Map<String, Integer> time) {
         this.time = time;
     }
 
-    public Map<String, Double> getCalories() {
+    public Map<String, Integer> getCalories() {
         return calories;
     }
 
-    public void setCalories(Map<String, Double> calories) {
+    public void setCalories(Map<String, Integer> calories) {
         this.calories = calories;
     }
 

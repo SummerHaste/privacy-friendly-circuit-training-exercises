@@ -178,8 +178,8 @@ public class WeeklyReportFragment extends Fragment implements ReportAdapter.OnIt
                 SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM", locale);
                 SimpleDateFormat idDateFormat = new SimpleDateFormat("yyyyMMdd");
 
-                Map<String, Double> timeData = new LinkedHashMap<>();
-                Map<String, Double> caloriesData = new LinkedHashMap<>();
+                Map<String, Integer> timeData = new LinkedHashMap<>();
+                Map<String, Integer> caloriesData = new LinkedHashMap<>();
                 timeData.put("", null);
                 caloriesData.put("", null);
 
@@ -193,8 +193,10 @@ public class WeeklyReportFragment extends Fragment implements ReportAdapter.OnIt
                     int time = statistics.getWORKOUTTIME();
                     int calories = statistics.getCALORIES();
 
-                    timeData.put(formatDate.format(start.getTime()), (double) time/60);
-                    caloriesData.put(formatDate.format(start.getTime()), (double) calories);
+                    timeData.put(formatDate.format(start.getTime()), time);
+                    caloriesData.put(formatDate.format(start.getTime()), calories);
+                    //timeData.put(formatDate.format(start.getTime()), (double) time/60);
+                    //caloriesData.put(formatDate.format(start.getTime()), (double) calories);
                     totalTime += time;
                     totalCalories += calories;
                     if (i != 6) {

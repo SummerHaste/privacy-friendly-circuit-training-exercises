@@ -159,7 +159,7 @@ public class TimerService extends Service {
         if(restTimer != null){
             restTimer.cancel();
         }
-        saveStatistics();
+        //saveStatistics();
         unregisterReceiver(notificationReceiver);
         super.onDestroy();
     }
@@ -225,7 +225,8 @@ public class TimerService extends Service {
             public void onFinish() {
                 Intent broadcast = new Intent(COUNTDOWN_BROADCAST);
 
-                caloriesBurned += caloriesPerExercise;
+                //caloriesBurned += caloriesPerExercise;
+                //caloriesBurned += 1;
 
                 if(currentSet < sets) {
                     if(isExerciseMode)
@@ -531,6 +532,7 @@ public class TimerService extends Service {
                 workoutTimer.start();
             }
             sendBroadcast(broadcast);
+            //caloriesBurned += 1;
         }
     }
 
@@ -682,7 +684,7 @@ public class TimerService extends Service {
      * @return Amount of calories burned.
      */
     private int calculateUserCalories(float workoutDurationSeconds){
-        int age = 0;
+/*        int age = 0;
         int height = 0;
         int weight = 0;
         int circleTrainingMET = 8;
@@ -691,9 +693,10 @@ public class TimerService extends Service {
         height = Integer.parseInt(PrefManager.getHeight(getBaseContext()));
         weight = (int) Double.parseDouble(PrefManager.getWeight(getBaseContext()));
 
-        float caloriesPerExercise = circleTrainingMET * (weight * workoutDurationSeconds / 3600);
+        float caloriesPerExercise = circleTrainingMET * (weight * workoutDurationSeconds / 3600);*/
 
-        return (int) caloriesPerExercise;
+        return 1;
+        //return (int) caloriesPerExercise;
     }
 
 
@@ -753,11 +756,11 @@ public class TimerService extends Service {
      * @param time The current timer value
      */
     private void updateNotification(int time) {
-        if(isAppInBackground) {
+/*        if (isAppInBackground) {
             Notification notification = buildNotification(time);
             notiManager.notify(NOTIFICATION_ID, notification);
         }
-        else if(notiManager != null) {
+        else */if(notiManager != null) {
             notiManager.cancel(NOTIFICATION_ID);
         }
     }
@@ -842,8 +845,10 @@ public class TimerService extends Service {
             statistics = database.getWorkoutData(id);
         }
 
-        int totalTimeSpentTraining = statistics.getWORKOUTTIME() + this.timeSpentWorkingOut;
-        int totalCaloriesBurnt = isCaloriesEnabled(this) ? statistics.getCALORIES() + this.caloriesBurned : statistics.getCALORIES();
+        //int totalTimeSpentTraining = statistics.getWORKOUTTIME() + this.timeSpentWorkingOut;
+        int totalTimeSpentTraining = statistics.getWORKOUTTIME() + 1;
+        //int totalCaloriesBurnt = isCaloriesEnabled(this) ? statistics.getCALORIES() + this.caloriesBurned : statistics.getCALORIES();
+        int totalCaloriesBurnt = isCaloriesEnabled(this) ? statistics.getCALORIES() + this.currentSet : statistics.getCALORIES();
 
         database.updateWorkoutData(new WorkoutSessionData(id, totalTimeSpentTraining, totalCaloriesBurnt));
         this.timeSpentWorkingOut = 0;

@@ -93,7 +93,7 @@
                             android:layout_marginLeft="60dp"
                             android:layout_marginStart="60dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_clock_24dp" />
+                            android:src="@drawable/ic_fire_24dp" />
                     </RelativeLayout>
 
                     <RelativeLayout

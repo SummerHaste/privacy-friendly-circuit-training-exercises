@@ -109,7 +109,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
                 barChartViewHolder.mTitleTextView.setText(barChartData.getTitle());
                 int barChartI = 0;
                 ArrayList<String> barChartXValues = new ArrayList<>();
-                Map<String, Double> barChartDataMap;
+                Map<String, Integer> barChartDataMap;
                 String barChartLabel;
                 if (barChartData.getDisplayedDataType() == null) {
                     barChartDataMap = barChartData.getTime();
@@ -131,7 +131,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
                     }
                 }
                 List<BarEntry> dataEntries = new ArrayList<>();
-                for (Map.Entry<String, Double> dataEntry : barChartDataMap.entrySet()) {
+                for (Map.Entry<String, Integer> dataEntry : barChartDataMap.entrySet()) {
                     barChartXValues.add(barChartI, dataEntry.getKey());
                     if (dataEntry.getValue() != null) {
                         float val = dataEntry.getValue().floatValue();
@@ -140,7 +140,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
                     barChartI++;
                 }
                 BarDataSet barDataSet = new BarDataSet(dataEntries, barChartLabel);
-                String formatPattern = "###,###,##0.0";
+                String formatPattern = "###,###,##0";
                 barDataSet.setValueFormatter(new DoubleValueFormatter(formatPattern));
 
                 ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
@@ -152,7 +152,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
                 chartLineDataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
                 chartLineDataSet.setDrawCircles(false);
                 chartLineDataSet.setColor(ContextCompat.getColor(barChartViewHolder.context, R.color.transparent), 0);
-                chartLineDataSet.setDrawValues(false);
+                chartLineDataSet.setDrawValues(true);
                 lineDataSets.add(chartLineDataSet);
 
                 CombinedData combinedData = new CombinedData();
@@ -172,8 +172,9 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder
                 ActivitySummary summaryData = (ActivitySummary) mItems.get(position);
                 SummaryViewHolder summaryViewHolder = (SummaryViewHolder) holder;
                 summaryViewHolder.mTitleTextView.setText(summaryData.getTitle());
-                summaryViewHolder.mTimeTextView.setText(formatTime(summaryData.getTime()));
+                //summaryViewHolder.mTimeTextView.setText(formatTime(summaryData.getTime()));
                 summaryViewHolder.mCaloriesTextView.setText(String.valueOf(summaryData.getCalories()));
+                summaryViewHolder.mTimeTextView.setText(String.valueOf(summaryData.getTime()));
                 break;
         }
     }

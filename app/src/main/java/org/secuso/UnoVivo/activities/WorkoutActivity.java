@@ -604,7 +604,6 @@ public class WorkoutActivity extends AppCompatActivity {
                 showCancelAlert(false);
             }
         } else {
-            cleanTimerServiceFinish();
             showFinishedView();
         }
         //super.onBackPressed();

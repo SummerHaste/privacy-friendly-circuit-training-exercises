@@ -11,10 +11,10 @@
         android:fragment="org.secuso.UnoVivo.activities.SettingsActivity$StatisticsPreferenceFragment"
         android:icon="@drawable/ic_statistics_24dp"
         android:title="@string/pref_header_statistics" />
-    <header
+<!--    <header
         android:fragment="org.secuso.UnoVivo.activities.SettingsActivity$PersonalizationPreferenceFragment"
         android:icon="@drawable/ic_personalization_24dp"
-        android:title="@string/pref_header_personalization" />
+        android:title="@string/pref_header_personalization" />-->
     <header
         android:fragment="org.secuso.UnoVivo.activities.SettingsActivity$NotificationPreferenceFragment"
         android:icon="@drawable/ic_bell_plus_24dp"
